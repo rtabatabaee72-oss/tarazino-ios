@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tarazino-ios-v2';
+const CACHE_NAME = 'income-ios-v3';
 const ASSETS = [
   './',
   './index.html',

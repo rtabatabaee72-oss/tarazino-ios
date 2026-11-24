@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>ترازینو | حسابداری هوشمند شخصی و تحلیل نقدینگی روزانه</title>
+  <title>income | حسابداری هوشمند شخصی و تحلیل نقدینگی روزانه</title>
 
   <!-- پیکربندی کامل اپلیکیشن مستقل iOS (Safari WebApp / PWA) -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="ترازینو" />
+  <meta name="apple-mobile-web-app-title" content="income" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="format-detection" content="telephone=no" />
   <meta id="meta-theme-color" name="theme-color" content="#060a14" />
@@ -623,8 +623,8 @@
           </div>
         </div>
         <div>
-          <div style="font-size:19px; font-weight:900; letter-spacing:-0.3px;">ترازینو</div>
-          <div class="text-muted" style="font-size:11px; font-weight:600;">نسخه مستقل iOS WebApp</div>
+          <div style="font-size:19px; font-weight:900; letter-spacing:-0.3px;">income</div>
+          <div class="text-muted" style="font-size:11px; font-weight:600;">مدیریت مالی و نقدینگی روزانه</div>
         </div>
       </div>
 
@@ -690,7 +690,7 @@
               </svg>
             </div>
             <div style="min-width:0;">
-              <div style="font-size:16px; font-weight:900; line-height:1.2;">ترازینو</div>
+              <div style="font-size:16px; font-weight:900; line-height:1.2;">income</div>
               <div id="mobile-header-date" class="text-muted truncate" style="font-size:11px;"></div>
             </div>
           </div>
@@ -726,7 +726,7 @@
                 <span data-icon="smartphone"></span>
               </div>
               <div>
-                <div style="font-size:13px; font-weight:800;">نصب ترازینو به‌صورت اپلیکیشن مستقل روی آیفون</div>
+                <div style="font-size:13px; font-weight:800;">نصب income به‌صورت اپلیکیشن مستقل روی آیفون</div>
                 <div class="text-sub" style="font-size:11.5px; margin-top:2px;">دکمه اشتراک‌گذاری (Share) را بزنید و گزینه <strong>Add to Home Screen</strong> را انتخاب کنید تا تمام‌صفحه و آفلاین اجرا شود.</div>
               </div>
             </div>
@@ -1257,7 +1257,7 @@
 
           <div class="grid grid-2">
             <!-- کارت نصب iOS -->
-            <div class="glass-card ios-install-banner" style="padding:20px; display:flex; flex-direction:column; gap:12px;">
+            <div id="ios-install-card" class="glass-card ios-install-banner" style="padding:20px; display:flex; flex-direction:column; gap:12px;">
               <div style="display:flex; align-items:center; gap:12px;">
                 <div style="width:42px; height:42px; border-radius:14px; background:rgba(99,102,241,0.18); color:#818cf8; display:flex; align-items:center; justify-content:center;"><span data-icon="smartphone"></span></div>
                 <div>
@@ -1298,19 +1298,16 @@
               <button onclick="exportCSV()" class="btn btn-emerald" style="width:100%; font-size:12px;"><span data-icon="sheet"></span><span>دانلود فایل اکسل (CSV)</span></button>
             </div>
 
-            <!-- داده نمونه و پاکسازی -->
+            <!-- بازنشانی کامل -->
             <div class="glass-card" style="padding:20px; display:flex; flex-direction:column; gap:12px; border-color:rgba(244,63,94,0.22);">
               <div style="display:flex; align-items:center; gap:12px;">
                 <div style="width:42px; height:42px; border-radius:14px; background:rgba(244,63,94,0.15); color:#f43f5e; display:flex; align-items:center; justify-content:center;"><span data-icon="refresh-cw"></span></div>
                 <div>
-                  <h4 style="margin:0; font-size:14px; font-weight:800;">داده‌های نمونه و بازنشانی</h4>
-                  <p class="text-muted" style="margin:2px 0 0; font-size:12px;">بازیابی اطلاعات نمونه یا شروع از صفر</p>
+                  <h4 style="margin:0; font-size:14px; font-weight:800;">پاکسازی و شروع مجدد</h4>
+                  <p class="text-muted" style="margin:2px 0 0; font-size:12px;">حذف تمامی تراکنش‌ها، بودجه‌ها و اهداف</p>
                 </div>
               </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <button onclick="confirmLoadSampleData()" class="btn btn-soft text-amber" style="flex:1; font-size:12px;">بازیابی نمونه</button>
-                <button onclick="confirmClearAllData()" class="btn btn-soft text-rose" style="flex:1; font-size:12px;">پاکسازی کامل</button>
-              </div>
+              <button onclick="confirmClearAllData()" class="btn btn-soft text-rose" style="width:100%; font-size:12px;">پاکسازی کامل داده‌ها</button>
             </div>
           </div>
         </section>
@@ -1567,7 +1564,7 @@
   <div id="ios-guide-modal" class="modal-backdrop">
     <div class="modal-card" style="max-width:460px;">
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
-        <h3 style="margin:0; font-size:17px; font-weight:900;">نصب مستقل ترازینو روی آیفون (iOS)</h3>
+        <h3 style="margin:0; font-size:17px; font-weight:900;">نصب مستقل income روی آیفون (iOS)</h3>
         <button onclick="closeModal('ios-guide-modal')" class="icon-btn"><span data-icon="x"></span></button>
       </div>
       <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; line-height:1.7;">
@@ -1584,7 +1581,7 @@
           <div class="text-sub" style="font-size:12px;">گزینه <strong>Add to Home Screen</strong> (افزودن به صفحه اصلی) را بزنید و Add را تایید کنید.</div>
         </div>
         <div style="padding:12px 14px; border-radius:16px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.28); font-size:12px;">
-          ✅ از این لحظه آیکون ترازینو کنار برنامه‌های آیفون قرار می‌گیرد و بدون نوار مرورگر، کاملاً مستقل و بدون نیاز به اینترنت کار می‌کند!
+          ✅ از این لحظه آیکون income کنار برنامه‌های آیفون قرار می‌گیرد و بدون نوار مرورگر، کاملاً مستقل و بدون نیاز به اینترنت کار می‌کند!
         </div>
       </div>
       <button onclick="closeModal('ios-guide-modal')" class="btn btn-primary" style="width:100%; margin-top:16px;">متوجه شدم</button>
@@ -2265,10 +2262,10 @@
     /* ============================================================================
        ۴. ثابت‌ها، دسته‌بندی‌ها و وضعیت برنامه
        ============================================================================ */
-    const STORAGE_KEY = 'tarazino_finance_state_v2';
-    const THEME_KEY = 'tarazino_theme_v2';
-    const PRIVACY_KEY = 'tarazino_privacy_v1';
-    const BANNER_DISMISSED_KEY = 'tarazino_ios_banner_dismissed';
+    const STORAGE_KEY = 'income_finance_state_v1';
+    const THEME_KEY = 'income_theme_v1';
+    const PRIVACY_KEY = 'income_privacy_v1';
+    const BANNER_DISMISSED_KEY = 'income_ios_banner_dismissed';
 
     const memoryStore = {};
     function safeGetStorage(key) {
@@ -2379,90 +2376,17 @@
     }
 
     /* ============================================================================
-       ۶. داده‌های نمونه + ذخیره‌سازی محلی مستقل
+       ۶. وضعیت اولیه بدون داده امتحانی + ذخیره‌سازی محلی مستقل
        ============================================================================ */
-    function createSampleState() {
-      const acc1 = 'acc_saman', acc2 = 'acc_gold', acc3 = 'acc_cash';
-      const accounts = [
-        { id: acc1, name: 'کارت اصلی بانک سامان', type: 'کارت بانکی', last4: '۹۰۱۲', initialBalance: 26000000, theme: 'indigo' },
-        { id: acc2, name: 'حساب پس‌انداز طلایی', type: 'حساب پس‌انداز', last4: '۴۸۳۱', initialBalance: 64000000, theme: 'emerald' },
-        { id: acc3, name: 'کیف پول نقد', type: 'کیف پول نقد', last4: '۰۰۰۰', initialBalance: 4500000, theme: 'gold' }
-      ];
-      let seq = 1;
-      const tx = (type, amount, category, accountId, jDate, description, toAccountId = null) => ({
-        id: `sample_tx_${seq++}`, type, amount, category, accountId, date: jDate, description,
-        ...(toAccountId ? { toAccountId } : {})
-      });
-      const transactions = [
-        tx('income', 42000000, 'salary', acc1, '1405-09-01', 'واریز حقوق ماهانه شرکت'),
-        tx('expense', 12000000, 'housing', acc1, '1405-09-02', 'اجاره منزل و شارژ ساختمان'),
-        tx('transfer', 9000000, 'transfer', acc1, '1405-09-02', 'انتقال پس‌انداز ابتدای ماه به حساب طلایی', acc2),
-        tx('expense', 1350000, 'food', acc1, '1405-09-03', 'خرید هفتگی سوپرمارکت و پروتئین'),
-        tx('expense', 380000, 'leisure', acc3, '1405-09-03', 'قهوه تخصصی و شیرینی در کافه'),
-        tx('expense', 820000, 'bills', acc1, '1405-09-04', 'اینترنت فیبر نوری و قبوض برق و گاز'),
-        tx('expense', 2150000, 'food', acc1, '1405-09-05', 'شام خانوادگی در رستوران سنتی'),
-        tx('expense', 650000, 'transport', acc3, '1405-09-06', 'بنزین و شست‌وشوی خودرو'),
-        tx('expense', 1750000, 'health', acc1, '1405-09-08', 'شهریه ماهانه باشگاه بدنسازی'),
-        tx('income', 11500000, 'business', acc1, '1405-09-10', 'تسویه پروژه طراحی رابط کاربری'),
-        tx('expense', 940000, 'food', acc1, '1405-09-10', 'خرید میوه، سبزیجات و لبنیات'),
-        tx('expense', 4850000, 'shopping', acc1, '1405-09-12', 'خرید کاپشن زمستانی و بوت چرمی'),
-        tx('expense', 520000, 'leisure', acc3, '1405-09-13', 'بلیط سینما و کتاب رمان'),
-        tx('expense', 5900000, 'shopping', acc1, '1405-09-15', 'خرید هدفون بی‌سیم و تجهیزات میز کار'),
-        tx('expense', 1480000, 'food', acc1, '1405-09-15', 'ناهار کاری و خرید خواربار'),
-        tx('expense', 760000, 'transport', acc1, '1405-09-17', 'تاکسی اینترنتی و پارکینگ'),
-        tx('expense', 1920000, 'health', acc1, '1405-09-19', 'ویزیت دندانپزشکی و داروخانه'),
-        tx('expense', 2400000, 'leisure', acc1, '1405-09-20', 'دورهمی آخر هفته و شام با دوستان'),
-        tx('income', 4800000, 'invest', acc2, '1405-09-22', 'سود ماهانه صندوق درآمد ثابت'),
-        tx('expense', 1180000, 'food', acc1, '1405-09-22', 'خرید سوپرمارکت و قهوه دانه'),
-        tx('expense', 490000, 'bills', acc1, '1405-09-24', 'اشتراک سرویس‌های ابری و موبایل'),
-        tx('expense', 3100000, 'transport', acc1, '1405-09-26', 'سرویس دوره‌ای و تعویض روغن خودرو'),
-        tx('expense', 1620000, 'food', acc3, '1405-09-27', 'رستوران ایتالیایی و دسر'),
-        tx('expense', 890000, 'other_exp', acc1, '1405-09-29', 'هدیه تولد همکار'),
-
-        tx('income', 40000000, 'salary', acc1, '1405-08-01', 'واریز حقوق ماه آبان'),
-        tx('expense', 12000000, 'housing', acc1, '1405-08-02', 'اجاره منزل و شارژ ماهانه'),
-        tx('expense', 1550000, 'food', acc1, '1405-08-04', 'خرید عمده مواد غذایی ماهانه'),
-        tx('expense', 780000, 'transport', acc3, '1405-08-06', 'بنزین و اسنپ هفتگی'),
-        tx('expense', 3450000, 'shopping', acc1, '1405-08-08', 'خرید کتانی و لباس ورزشی'),
-        tx('expense', 920000, 'bills', acc1, '1405-08-10', 'قبض آب، برق، گاز و اینترنت'),
-        tx('income', 8500000, 'business', acc1, '1405-08-12', 'پروژه مشاوره محصول'),
-        tx('expense', 1240000, 'food', acc1, '1405-08-13', 'سوپرمارکت و رستوران'),
-        tx('expense', 6800000, 'leisure', acc1, '1405-08-16', 'سفر دو روزه شمال و اقامتگاه'),
-        tx('expense', 1600000, 'health', acc1, '1405-08-19', 'باشگاه و مکمل‌های ورزشی'),
-        tx('expense', 640000, 'food', acc3, '1405-08-21', 'کافه و ناهار بیرون'),
-        tx('income', 4600000, 'invest', acc2, '1405-08-23', 'سود صندوق سرمایه‌گذاری'),
-        tx('expense', 2250000, 'shopping', acc1, '1405-08-24', 'خرید لوازم دکوراسیون اتاق کار'),
-        tx('expense', 1380000, 'food', acc1, '1405-08-26', 'خرید میوه و سوپرمارکت'),
-        tx('expense', 950000, 'transport', acc1, '1405-08-28', 'بیمه بدنه قسط ماهانه'),
-        tx('transfer', 7500000, 'transfer', acc1, '1405-08-29', 'انتقال مازاد ماهانه به پس‌انداز', acc2),
-
-        tx('income', 38500000, 'salary', acc1, '1405-07-01', 'حقوق ماه مهر'),
-        tx('expense', 11500000, 'housing', acc1, '1405-07-02', 'اجاره ماه مهر'),
-        tx('expense', 2450000, 'food', acc1, '1405-07-05', 'خرید مواد غذایی و رستوران'),
-        tx('expense', 4100000, 'shopping', acc1, '1405-07-09', 'خرید پوشاک پاییزی'),
-        tx('expense', 1150000, 'bills', acc1, '1405-07-12', 'قبوض و اشتراک‌ها'),
-        tx('income', 9200000, 'business', acc1, '1405-07-15', 'پروژه توسعه وب‌سایت'),
-        tx('expense', 2950000, 'health', acc1, '1405-07-18', 'چکاپ کامل پزشکی و آزمایشگاه'),
-        tx('expense', 1750000, 'food', acc3, '1405-07-22', 'رستوران و خرید خانه'),
-        tx('expense', 1900000, 'leisure', acc1, '1405-07-26', 'کنسرت موسیقی و کافه'),
-        tx('expense', 1300000, 'transport', acc1, '1405-07-29', 'مخارج حمل‌ونقل ماهانه'),
-
-        tx('income', 37000000, 'salary', acc1, '1405-06-01', 'حقوق ماه شهریور'),
-        tx('expense', 11500000, 'housing', acc1, '1405-06-02', 'اجاره ماه شهریور'),
-        tx('expense', 3200000, 'food', acc1, '1405-06-07', 'مخارج خوراک و خرید خانه'),
-        tx('expense', 5400000, 'leisure', acc1, '1405-06-14', 'سفر پایان تابستان'),
-        tx('income', 5200000, 'invest', acc2, '1405-06-18', 'سود سپرده و سهام'),
-        tx('expense', 2600000, 'shopping', acc1, '1405-06-21', 'خرید لوازم جانبی موبایل'),
-        tx('expense', 1450000, 'transport', acc3, '1405-06-25', 'بنزین و رفت‌وآمد'),
-        tx('expense', 980000, 'bills', acc1, '1405-06-29', 'قبوض خدماتی ماهانه')
-      ];
-      const budgets = { food: 9500000, shopping: 10000000, transport: 5000000, health: 4000000, leisure: 3800000, bills: 1800000 };
-      const goals = [
-        { id: 'goal_1', title: 'صندوق اضطراری ۶ ماهه', target: 150000000, saved: 92000000, icon: 'shield' },
-        { id: 'goal_2', title: 'سفر نوروزی ۱۴۰۶', target: 45000000, saved: 28500000, icon: 'plane' },
-        { id: 'goal_3', title: 'ارتقای مک‌بوک و تجهیزات کار', target: 110000000, saved: 49000000, icon: 'laptop' }
-      ];
-      return { accounts, transactions, budgets, goals };
+    function createInitialEmptyState() {
+      return {
+        accounts: [
+          { id: 'acc_main', name: 'کیف پول اصلی', type: 'کارت بانکی', last4: '۰۰۰۰', initialBalance: 0, theme: 'indigo' }
+        ],
+        transactions: [],
+        budgets: {},
+        goals: []
+      };
     }
 
     function saveState() {
@@ -2490,7 +2414,7 @@
           }
         }
       } catch (e) {}
-      appState = createSampleState();
+      appState = createInitialEmptyState();
       saveState();
     }
 
@@ -2628,6 +2552,9 @@
         const el = document.getElementById(id);
         if (el) el.dataset.icon = isDark ? 'moon' : 'sun';
       });
+      if (window.TarazinoAndroid && typeof window.TarazinoAndroid.setSystemBarTheme === 'function') {
+        try { window.TarazinoAndroid.setSystemBarTheme(isDark); } catch (e) {}
+      }
       renderIcons();
     }
 
@@ -2651,6 +2578,10 @@
     }
 
     function checkIOSBanner() {
+      if (window.TarazinoAndroid) {
+        document.getElementById('ios-install-card')?.classList.add('hidden');
+        return;
+      }
       const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
       const dismissed = safeGetStorage(BANNER_DISMISSED_KEY) === '1';
       const banner = document.getElementById('ios-install-banner');
@@ -2718,7 +2649,7 @@
         target.classList.add('view-animate');
       }
       const titleEl = document.getElementById('page-title');
-      if (titleEl) titleEl.textContent = TAB_TITLES[tabName] || 'ترازینو';
+      if (titleEl) titleEl.textContent = TAB_TITLES[tabName] || 'income';
 
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
       document.querySelectorAll('.tabbar-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
@@ -3945,8 +3876,14 @@
 
     function exportJSON() {
       const payload = { version: 2, exportedAt: new Date().toISOString(), ...appState };
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
-      downloadBlob(blob, `tarazino-backup-${makeJDate(TODAY_J.jy, TODAY_J.jm, TODAY_J.jd)}.json`);
+      const text = JSON.stringify(payload, null, 2);
+      const fname = `income-backup-${makeJDate(TODAY_J.jy, TODAY_J.jm, TODAY_J.jd)}.json`;
+      if (window.TarazinoAndroid && typeof window.TarazinoAndroid.saveFile === 'function') {
+        window.TarazinoAndroid.saveFile(fname, 'application/json', text);
+        return;
+      }
+      const blob = new Blob([text], { type: 'application/json;charset=utf-8' });
+      downloadBlob(blob, fname);
       showToast('فایل پشتیبان JSON دانلود شد.');
     }
 
@@ -3993,30 +3930,19 @@
             .join(',');
         });
       const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\r\n');
+      const fname = `income-transactions-${makeJDate(TODAY_J.jy, TODAY_J.jm, TODAY_J.jd)}.csv`;
+      if (window.TarazinoAndroid && typeof window.TarazinoAndroid.saveFile === 'function') {
+        window.TarazinoAndroid.saveFile(fname, 'text/csv', csvContent);
+        return;
+      }
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      downloadBlob(blob, `tarazino-transactions-${makeJDate(TODAY_J.jy, TODAY_J.jm, TODAY_J.jd)}.csv`);
+      downloadBlob(blob, fname);
       showToast('فایل اکسل CSV با موفقیت دانلود شد.');
-    }
-
-    function confirmLoadSampleData() {
-      showConfirmModal('بازیابی داده‌های نمونه', 'اطلاعات فعلی جایگزین داده‌های نمونه (شامل ۵۸ تراکنش در ۴ ماه) می‌شوند. ادامه می‌دهید؟', () => {
-        appState = createSampleState();
-        saveState();
-        currentRefYear = TODAY_J.jy; currentRefMonth = TODAY_J.jm;
-        dailyYear = TODAY_J.jy; dailyMonth = TODAY_J.jm; dailySelectedDay = TODAY_J.jd;
-        renderAll();
-        showToast('داده‌های نمونه با موفقیت بارگذاری شدند.');
-      }, 'بارگذاری نمونه');
     }
 
     function confirmClearAllData() {
       showConfirmModal('پاکسازی کامل داده‌ها', 'تمام تراکنش‌ها، بودجه‌ها و اهداف پاک می‌شوند و فقط یک حساب خالی باقی می‌ماند. این عمل قابل بازگشت نیست!', () => {
-        appState = {
-          accounts: [{ id: generateId('acc'), name: 'کیف پول اصلی', type: 'کارت بانکی', last4: '۰۰۰۰', initialBalance: 0, theme: 'indigo' }],
-          transactions: [],
-          budgets: {},
-          goals: []
-        };
+        appState = createInitialEmptyState();
         saveState(); renderAll();
         showToast('تمامی داده‌ها پاکسازی شدند.', 'info');
       }, 'پاکسازی کامل');
@@ -4025,6 +3951,19 @@
     /* ============================================================================
        ۱۴. راه‌اندازی اولیه برنامه و ثبت Service Worker (در صورت اجرا روی HTTP)
        ============================================================================ */
+    window.__tarazinoHandleBack = function () {
+      const openModalEl = document.querySelector('.modal-backdrop.open');
+      if (openModalEl) {
+        closeModal(openModalEl.id);
+        return true;
+      }
+      if (activeTab !== 'dashboard') {
+        switchTab('dashboard');
+        return true;
+      }
+      return false;
+    };
+
     function initApp() {
       initTheme();
       loadState();
